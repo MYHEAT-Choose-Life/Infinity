@@ -1,0 +1,602 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat','Poppins', sans-serif;
+    list-style: none;
+
+}
+
+
+
+body {
+
+    padding: 0;
+
+}
+
+section {
+
+    height: 90vh;
+    
+}
+
+/* HEADER LAYOUT */
+.hero-section {
+    
+    
+    color: white;
+    padding-left: 0;
+    
+}
+
+header {
+
+    height: 100%;
+    padding: 0;
+
+}
+
+/* LEFT PANEL (LOGO AREA) */
+.brand {
+
+    background-color: #4b004a;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                      url('../images/woman.jpg'); /* optional background portrait */
+    background-size: cover;
+    background-position: center;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 25%;
+
+}
+
+.logo img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.logo_text {
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    max-width: 180px;
+    line-height: 1.4;
+}
+
+/* RIGHT HERO AREA */
+.hero {
+   
+    background: linear-gradient(90deg, #c92b87, #f5623d);
+    padding: 0px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    position: relative;
+    width: 75%;
+}
+
+/* NAVIGATION BAR */
+.navbar {
+
+    padding-top: 50px;
+     
+}
+
+.navlist {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    gap: 2rem;
+    list-style: none;
+    z-index: 100;
+}
+
+.nav_link {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.nav_link:hover,
+.nav_link.active {
+    border-bottom: 2px solid white;
+}
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 25px;
+  height: 18px;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* HERO TEXT */
+.hero_big_text {
+    max-width: 680px;
+    position: relative;
+    top: 60px;
+
+}
+
+.hero_title {
+    font-size: 4rem;
+    font-weight: 100;
+    line-height: 5.5rem;
+   
+}
+
+.bold_hero_text {
+    font-weight: 500;
+    font-size: 7rem;
+    line-height: 1.2rem;
+}
+
+.hero_description {
+    margin-top: 30px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: #fff;
+    
+}
+
+/* BUTTONS */
+.hero_buttons {
+    margin-top: 30px;
+    display: flex;
+    
+    flex-wrap: wrap;
+
+}
+
+.btn {
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.white-btn {
+    background-color: #fff;
+    color: #c92b87;
+    margin-right: 15px;
+    transition: 0.5ms ease-in-out;
+}
+
+.white-btn:hover {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.outline-btn {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.outline-btn:hover {
+    background-color: #fff;
+    color: #c92b87;
+}
+
+.nav_link {
+    color: #ffff;
+}
+
+.nav_link {
+    text-decoration: none;
+}
+
+#about {
+
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                      url('../images/ppo.png'); /* optional background portrait */
+    background-size: cover;
+}
+
+.about_background {
+
+    height: 100%;
+    z-index: -1;
+    background-color: #565656CC;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 1.9);
+    padding: 60px 60px;
+    color: #fff;
+    width: 75%;
+
+}
+
+.about_title {
+
+    font-size: 3.5rem;
+    font-weight: 100;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+
+}
+
+.about_description {
+
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+
+.get_in_touch {
+    color: #fff;
+    background-color: #c92b87;
+    width: 150px;
+    transition: all 0.5ms ease-in-out;
+
+}
+
+.get_in_touch:hover {
+    border: 2px solid #fff;
+}
+
+
+
+.services_background {
+    height: auto;
+    width: 75%;
+    background: linear-gradient(45deg, #d1d1d1, #fdfdfd);
+    padding: 60px 60px;
+}
+
+.services_image {
+    width: 25%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                      url('../images/woman2.jpg'); /* optional background portrait */
+    background-size: cover;
+}
+
+.services_title {
+
+    color: #c92b87;
+    font-size: 3.5rem;
+    font-weight: 200;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+
+}
+
+.services_color_text {
+
+    color: #c92b87;
+    
+
+}
+
+.service_description {
+    color: #484848;
+    font-size: 1.1rem;
+}
+
+.gold_text {
+    color: #a38d19;
+}
+
+.get_a_quote {
+
+    color: #fff;
+    background-color: #c92b87;
+    width: 150px;
+    transition: all 0.5ms ease-in-out;
+
+}
+
+.get_a_quote:hover {
+    border: 2px solid #fff;
+}
+
+#contact {
+
+    padding: 60px 60px;
+    background: linear-gradient( 45deg, #f5623d, #c92b87);
+}
+
+.contact_section {
+
+    gap: 12rem;
+    flex-wrap: wrap;
+
+}
+
+input, textarea {
+
+    background: transparent;
+    padding: 0.65rem 1rem;
+    border: 0.1rem, solid, #fff;
+    border-radius: 1rem;
+    width: 25rem;
+}
+
+.submit {
+
+    background: #fff;
+    transition: 0.3s;
+
+}
+
+.submit:hover {
+
+    border: 1.5px, solid, #fff;
+    color: #fff;
+}
+
+
+input::placeholder, textarea::placeholder {
+
+    color: #fff;
+    font-weight: 100;
+}
+
+
+
+.contact_title {
+    font-size: 3.5rem;
+    font-weight: 100;
+    color: #fff;
+}
+
+.contact_phone_number {
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: #fff;
+}
+
+.contact_email {
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: #fff;
+}
+
+.icons_list {
+    padding: 0px;
+}
+
+.list_item {
+
+    width: 90px;
+    padding: 0.8rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: #ddd4d4 2px solid;
+}
+
+.list_item:hover {
+    background-color: transparent;
+    border: #c92b87 2px solid; 
+
+}
+
+.list_item img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/*Articles*/
+
+.sub-title {
+
+    color: #c92b87;
+
+}
+
+.trending_collection a, .opinion_collection a, .video_collection a {
+
+    text-decoration: none;
+    color: #000;
+}
+
+.article_nav li a {
+    color: #000;
+}
+
+.big_article_text {
+
+    font-size: 3.5rem;
+    font-weight: 100;
+}
+
+.top_compartment {
+
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.search {
+
+    background: #000;
+    border: none;
+    border-radius: 2.5rem;
+
+}
+
+.horizontal_line {
+
+    border-bottom: 2px solid #c92b87;
+    width: 100vw;
+}
+
+.trending_collection, .video_collection, .opinion_collection {
+
+    margin-top: 1rem;
+}
+
+
+.trending_lg_text {
+
+    color: #c92b87;
+}
+
+.article_title {
+
+    font-weight: 700;
+
+}
+
+.image {
+
+    max-width: 600px;
+
+}
+
+.image img {
+
+    width: 100%;
+    height: auto;
+}
+
+.date {
+
+    font-weight: 300;
+    font-style: italic;
+    
+}
+
+.author {
+
+    font-weight: 600;
+    font-style: italic;
+
+}
+
+.video {
+
+    max-width: 100%;
+    height: 250px;
+}
+
+.video-title {
+
+    font-size: 1.8rem;
+    font-weight: 600;
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    section {
+
+        height: 75vh;
+
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .logo_text {
+        font-size: 0.75rem;
+        line-height: 1.1rem;
+    }
+    
+
+
+    .hero {
+        padding: 0 10px;
+    }
+
+    .hero_title {
+        font-size: 2rem !important;
+        line-height: 2.3rem;
+    }
+
+    .bold_hero_text {
+
+        font-weight: 500;
+        font-size: 3rem !important;
+    }
+
+    .hero_description {
+        font-size: 0.85rem;
+        line-height: 1.1rem;
+    }
+
+    .btn {
+        padding: 8px 20px
+    }
+
+    .about_description, .service_description {
+        font-size: 0.8rem;
+    }
+
+    .list_item {
+        padding: 0.4rem;
+    }
+
+    input, textarea {
+        width: 20rem;
+    }
+
+    .contact_section {
+        gap: 4rem;
+    }
+
+    .contact_phone_number, .contact_email {
+        font-size: 1.1rem;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .hamburger {
+    display: flex;
+
+  }
+
+  .hamburger span {
+
+    background-color: #000;
+  }
+
+  .navlist {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #11111185;
+    flex-direction: column;
+    width: 200px;
+    text-align: right;
+    padding: 1rem;
+    gap: 1rem;
+    display: none;
+  }
+
+  .navlist.show {
+    display: flex;
+  }
+    
+}
