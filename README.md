@@ -1,61 +1,109 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Infinity App
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern web application built with [Laravel](https://laravel.com) and [Filament](https://filamentphp.com).
 
-## About Laravel
+## Prerequisites
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- PHP 8.2 or higher
+- Composer
+- Node.js & NPM
+- SQLite (default) or MySQL
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Installation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. **Clone the repository**
 
-## Learning Laravel
+    ```bash
+    git clone https://github.com/MYHEAT-Choose-Life/Infinity.git
+    cd Infinity
+    ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. **Install Dependencies**
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+    ```bash
+    composer install
+    npm install
+    ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. **Environment Setup**
+   Copy the example environment file and configure it:
 
-## Laravel Sponsors
+    ```bash
+    cp .env.example .env
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    _Windows (PowerShell):_
 
-### Premium Partners
+    ```powershell
+    copy .env.example .env
+    ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+4. **Generate Application Key**
 
-## Contributing
+    ```bash
+    php artisan key:generate
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. **Database Setup**
+   The application uses MySQL. Ensure your `.env` file is configured with your MySQL credentials:
 
-## Code of Conduct
+    ```bash
+    php artisan migrate
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    Update the `DB_CONNECTION`, `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, and `DB_PASSWORD` variables in your `.env` file to match your local MySQL configuration.
 
-## Security Vulnerabilities
+## Running the Application
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+for development, you can run the following command to start the server and asset compilation:
 
-## License
+```bash
+composer run dev
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Or run them separately:
+
+```bash
+# Start Laravel server
+php artisan serve
+
+# Start Vite (in a new terminal)
+npm run dev
+```
+
+The application will be accessible at [http://localhost:8000](http://localhost:8000).
+
+## Admin Panel
+
+This application uses **Filament** for the admin interface.
+
+- **URL**: [http://localhost:8000/admin](http://localhost:8000/admin)
+- **Login**: You will need to create a user to log in.
+
+### Creating a User
+
+To create a new admin user, run:
+
+```bash
+php artisan make:filament-user
+```
+
+Follow the prompts to enter a name, email, and password.
+
+## Useful Commands
+
+- **Clear Cache**: `php artisan optimize:clear`
+- **Run Tests**: `php artisan test`
+- **Create Filament Resource**: `php artisan make:filament-resource Customer`
+
+## Troubleshooting
+
+- **Storage Permission**: If you see image loading issues, ensure the storage link is created:
+    ```bash
+    php artisan storage:link
+    ```
+- **Vite Manifest not found**: Ensure you have run `npm install` and `npm run build` (or `npm run dev` is running).
+
+## Testing
+
+For detailed instructions on running tests, please refer to [TESTING.md](TESTING.md).

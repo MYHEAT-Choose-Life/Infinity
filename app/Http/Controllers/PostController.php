@@ -8,11 +8,23 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     // Homepage / Post lists
-    public function index()
+    public function index(Request $request)
     {
-        $trending = Post::where('type', 'trending')->orderBy('published_at', 'desc')->get();
-        $opinion  = Post::where('type', 'opinion')->orderBy('published_at', 'desc')->get();
-        $videos   = Post::where('type', 'video')->orderBy('published_at', 'desc')->get();
+        $query = Post::query();
+
+        if ($request->has('search') && $request->search != '') {
+            $searchTerm = $request->search;
+            $query->where(function($q) use ($searchTerm) {
+                $q->where('title', 'LIKE', "%{$searchTerm}%")
+                  ->orWhere('content', 'LIKE', "%{$searchTerm}%")
+                  ->orWhere('author', 'LIKE', "%{$searchTerm}%");
+            });
+        }
+
+        // Clone the query for each type to apply the search filter to all
+        $trending = (clone $query)->where('type', 'trending')->orderBy('published_at', 'desc')->get();
+        $opinion  = (clone $query)->where('type', 'opinion')->orderBy('published_at', 'desc')->get();
+        $videos   = (clone $query)->where('type', 'video')->orderBy('published_at', 'desc')->get();
 
         return view('articlelist', compact('trending', 'opinion', 'videos'));
     }

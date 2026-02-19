@@ -17,7 +17,9 @@ class Post extends Model
         'excerpt',
         'content',
         'image',
-        'video_URL',
+        'attachment',
+        'video_url',
+        'thumbnail',
         'type',
         'published_at',
     ];
@@ -25,7 +27,7 @@ class Post extends Model
     protected static function booted() {
 
         static::saving(function($post){
-            if ($post->video_URL) {
+            if ($post->video_url) {
                 $post->type = 'video';
                 $post->thumbnail = "https://img.youtube.com/vi/{$post->youtube_id}/hqdefault.jpg";
             }

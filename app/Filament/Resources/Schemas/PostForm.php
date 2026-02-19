@@ -24,7 +24,18 @@ class PostForm
                 RichEditor::make('content')
                 ->required(fn($get) => $get('type') !== 'video'),
                 TextInput::make('excerpt'),
-                FileUpload::make('image')->image(),
+                FileUpload::make('image')
+                    ->image()
+                    ->disk('public')
+                    ->directory('images')
+                    ->visibility('public'),
+                FileUpload::make('attachment')
+                    ->label('Article Document (PDF/Word)')
+                    ->acceptedFileTypes(['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'])
+                    ->disk('public')
+                    ->directory('attachments')
+                    ->visibility('public')
+                    ->downloadable(),
                 TextInput::make('video_url')
                     ->label('Video URL')
                     ->placeholder('https://www.youtube.com/watch?v=abcd1234')

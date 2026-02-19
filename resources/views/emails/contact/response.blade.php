@@ -1,7 +1,7 @@
 <x-mail::message>
 # Introduction
 
-Dear {{ $data[‘name’] }},
+Dear {{ $data['name'] }},
 
 Thank you for reaching out to us. We will get back to you soon.
 
