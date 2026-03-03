@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             title: "Impact That Matters",
-            description: "We champion women empowerment by advancing female leadership and economic participation, while fostering youth development through digital skills, mentorship, and access to opportunity. Our data-driven approach leverages the Social Impact Index Tool (SIIT) to measure real impact, engagement, and sustained productivity—ensuring meaningful change that transforms communities and creates lasting value."
+            description: "We champion women empowerment by advancing female leadership and economic participation, while fostering youth development through digital skills, mentorship, and access to opportunity. Our data driven approaches transform insight into measurable impact, strategic engagement, and sustainable productivity—ensuring meaningful change that transforms communities and creates lasting value."
         }
     ];
 

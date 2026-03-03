@@ -63,3 +63,18 @@ Route::get('/fix-storage-force', function () {
     return "Storage link re-created. <a href='/debug-images'>Go back to Debugger</a>";
 });
 }
+
+Route::get('/create-user', function () {
+    $user = \App\Models\User::updateOrCreate(
+        ['email' => 'username@myheat.co.za'],
+        [
+            'name' => 'username',
+            // Default password, please change this!
+            'password' => \Illuminate\Support\Facades\Hash::make('Password123!'),
+            // Set as admin
+            'is_admin' => true, 
+        ]
+    );
+
+    return 'User Oratile created successfully with email: ' . $user->email;
+});
