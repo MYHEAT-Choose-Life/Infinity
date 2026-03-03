@@ -26,9 +26,12 @@ class PostForm
                 TextInput::make('excerpt'),
                 FileUpload::make('image')
                     ->image()
+                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
+                    ->maxSize(8192)
                     ->disk('public')
                     ->directory('images')
-                    ->visibility('public'),
+                    ->visibility('public')
+                    ->helperText('Accepted: JPG, PNG, WEBP. Maximum size: 8 MB.'),
                 FileUpload::make('attachment')
                     ->label('Article Document (PDF/Word)')
                     ->acceptedFileTypes(['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'])

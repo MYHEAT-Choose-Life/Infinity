@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use Filament\Auth\MultiFactor\App\AppAuthentication;
+use Filament\Auth\MultiFactor\Email\EmailAuthentication;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -26,8 +28,14 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
-            ->path('admin')
+            ->path(env('FILAMENT_ADMIN_PATH', 'ops-portal-7f3c29'))
             ->login()
+            ->loginRouteSlug(env('FILAMENT_ADMIN_LOGIN_SLUG', 'sign-in'))
+            ->multiFactorAuthentication([
+                AppAuthentication::make(),
+                EmailAuthentication::make(),
+            ], isRequired: true)
+            ->multiFactorAuthenticationRoutePrefix(env('FILAMENT_ADMIN_MFA_PREFIX', 'verify-access'))
             ->colors([
                 'primary' => Color::Amber,
             ])

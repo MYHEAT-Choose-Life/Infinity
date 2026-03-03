@@ -77,8 +77,8 @@ The application will be accessible at [http://localhost:8000](http://localhost:8
 
 This application uses **Filament** for the admin interface.
 
-- **URL**: [http://localhost:8000/admin](http://localhost:8000/admin)
-- **Login**: You will need to create a user to log in.
+- **URL**: The admin panel URL is environment-specific and configured privately through environment variables.
+- **Login**: You will need to create an admin user to log in.
 
 ### Creating a User
 
@@ -89,6 +89,23 @@ php artisan make:filament-user
 ```
 
 Follow the prompts to enter a name, email, and password.
+
+### Admin Security Setup
+
+Configure the admin panel route and MFA-related paths in your environment:
+
+```env
+FILAMENT_ADMIN_PATH=ops-portal-7f3c29
+FILAMENT_ADMIN_LOGIN_SLUG=sign-in
+FILAMENT_ADMIN_MFA_PREFIX=verify-access
+```
+
+After creating an admin user:
+
+1. Sign in using the private admin URL configured for the environment.
+2. Enroll an authenticator app when prompted.
+3. Store recovery codes securely.
+4. Optionally enable email MFA after production mail delivery is configured and the admin email is verified.
 
 ## Useful Commands
 
@@ -103,6 +120,7 @@ Follow the prompts to enter a name, email, and password.
     php artisan storage:link
     ```
 - **Vite Manifest not found**: Ensure you have run `npm install` and `npm run build` (or `npm run dev` is running).
+- **Email MFA**: Ensure `MAIL_MAILER` and related mail settings are configured in non-local environments before relying on email MFA.
 
 ## Testing
 
