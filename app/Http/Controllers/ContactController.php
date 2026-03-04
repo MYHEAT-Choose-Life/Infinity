@@ -22,7 +22,7 @@ class ContactController extends Controller
         ]);
 
                 // Send email to your email
-        Mail::to('info@infinitysbs.co.za')->send(new ContactMessage($request->all()));
+        Mail::to('Neo@myheat.co.za')->send(new ContactMessage($request->all()));
 
         // Send email to the client
         Mail::to($request->email)->send(new ContactResponse($request->all()));
