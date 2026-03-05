@@ -322,10 +322,10 @@ header {
 }
 
 .services_image {
-    width: 25%;
+    width: 50%;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url("../images/woman2.webp"); /* optional background portrait */
+        url("../images/serviceImg.webp"); /* optional background portrait */
     background-size: cover;
 }
 

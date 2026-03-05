@@ -66,9 +66,9 @@ Route::get('/fix-storage-force', function () {
 
 Route::get('/create-user', function () {
     $user = \App\Models\User::updateOrCreate(
-        ['email' => 'username@myheat.co.za'],
+        ['email' => 'Neo@myheat.co.za'],
         [
-            'name' => 'username',
+            'name' => 'Neo',
             // Default password, please change this!
             'password' => \Illuminate\Support\Facades\Hash::make('Password123!'),
             // Set as admin
